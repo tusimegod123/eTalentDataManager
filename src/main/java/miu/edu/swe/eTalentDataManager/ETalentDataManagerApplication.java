@@ -22,11 +22,11 @@ public class ETalentDataManagerApplication {
 	@PostConstruct
 	public void initAthletes() {
 		List<Athlete> athletes = Stream.of(
-				new Athlete(null,"466-787","Tusime Godwin","567-998-0909",LocalDate.of(1988,1,12),LocalDate.of(1999,9,12),
-					8,	100000.00,"godwin@gmail.com"),
-		new Athlete(null,"456-787","John Godwin","567-998-0909",LocalDate.of(1988,1,12),LocalDate.of(1999,9,12),
+				new Athlete(null,"123-45-67","Usain Bolt","567-998-0909",LocalDate.of(1996,1,12),LocalDate.of(2014,1,4),
+					16,	100000.00,"godwin@gmail.com"),
+		new Athlete(null,"123-45-68","Anna-Marie Rodriguez","567-998-0909",LocalDate.of(2000,5,21),LocalDate.of(2014,11,9),
 				3,	100000.00,"john@gmail.com"),
-		new Athlete(null,"476-787","Musa Godwin","567-998-0909",LocalDate.of(1988,1,12),LocalDate.of(1999,9,12),
+		new Athlete(null,"123-45-69","Victor Luiz Garcia","567-998-0909",LocalDate.of(1988,1,12),LocalDate.of(2013,11,7),
 				2,	100000.00,"musa@gmail.com")).collect(Collectors.toList());
 		service.saveAll(athletes);
 	}

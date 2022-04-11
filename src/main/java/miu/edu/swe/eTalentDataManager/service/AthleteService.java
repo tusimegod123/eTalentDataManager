@@ -5,6 +5,8 @@ import miu.edu.swe.eTalentDataManager.repository.AthleteRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,8 +20,11 @@ public class AthleteService {
     public void saveAthlete(Athlete  athlete){
         athleteRepository.save(athlete);
     }
+
         public List<Athlete> getAthlete(){
-        return  athleteRepository.findAll(Sort.by(Sort.Direction.ASC,"fullName"));
+            List<Athlete> athletes =  athleteRepository.findAll(Sort.by(Sort.Direction.ASC,"fullName"));
+            return athletes.stream().filter(athlete -> Period.between(athlete.getDateOfRegistration(), LocalDate.now()).getYears() >= 5)
+                    .collect(Collectors.toList());
         }
     public List<Athlete> eliteAthletes(){
         List<Athlete> athletes =  athleteRepository.findAll();

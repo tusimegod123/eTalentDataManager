@@ -27,6 +27,7 @@
                 <th scope="col">PhoneNumber</th>
                 <th scope="col">Date Of Birth</th>
                 <th scope="col">Date Of Registration</th>
+                <th scope="col">Monthly Salary</th>
                 <th scope="col">Medals won</th>
                 <th scope="col">Email</th>
 <!--                <th scope="col">EDIT</th>-->
@@ -44,6 +45,7 @@
                 <td th:text="${athlete.phoneNumber}"></td>
                 <td th:text="${athlete.dateOfBirth}"></td>
                 <td th:text="${athlete.dateOfRegistration}"></td>
+                <td >$<span th:text="${#numbers.formatDecimal(athlete.monthlySalary, 0, 'COMMA', 2, 'POINT')}">10.00</span></td>
                 <td th:text="${athlete.totalNumberOfMedalsWon}"></td>
                 <td th:text="${athlete.emailAddress}"></td>
 
